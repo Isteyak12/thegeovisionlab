@@ -16,20 +16,18 @@ import {
 } from "@/components/ui/card";
 import { MapPin, Users, Search, Globe, Award, Zap } from "lucide-react";
 import Navbar from "@/components/navbar";
-
-// ...existing imports...
+import Link from "next/link";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar />
-      <div className="h-20"></div>
+      <div className="h-15"></div>
       {/* Hero Section with Background Image */}
       <div
         className="flex items-center justify-center h-[calc(100vh-80px)] relative"
         style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=800&fit=crop')",
+          backgroundImage: "url('/people/geovision_lab_photos/IMG_7026.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -37,24 +35,31 @@ export default function Home() {
       >
         {/* <div className="absolute inset-0 bg-black bg-opacity-50"></div> */}
         <div className="text-center max-w-4xl mx-auto px-6 relative z-10">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+          <h1
+            className="text-5xl md:text-6xl font-bold text-orange-400 mb-6"
+            style={{ WebkitTextStroke: "3px #000000" }}
+          >
             Welcome to GeoVision Lab
           </h1>
-          <p className="text-xl text-white mb-8 leading-relaxed">
+          <p className="text-xl text-black font-bold mb-8 leading-relaxed bg-yellow-400 px-6 py-3 rounded-lg inline-block">
             Advancing geospatial technology and data visualization for a better
-            understanding of our world
+            understanding of our world!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="px-8 py-3">
-              Explore Our Research
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="px-8 py-3 border-white text-white hover:bg-white hover:text-black"
-            >
-              Meet Our Team
-            </Button>
+            <Link href="/research">
+              <Button size="lg" className="px-8 py-3">
+                Explore Our Research
+              </Button>
+            </Link>
+            <Link href="/people">
+              <Button
+                variant="outline"
+                size="lg"
+                className="px-8 py-3 border-black text-black hover:bg-teal hover:text-black"
+              >
+                Meet Our Team
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
@@ -200,16 +205,20 @@ export default function Home() {
             Discover our latest research projects and connect with our team
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="secondary" size="lg" className="px-8 py-3">
-              View Research
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="px-8 py-3 border-white text-white hover:bg-white hover:text-blue-600"
-            >
-              Contact Us
-            </Button>
+            <Link href="/research">
+              <Button variant="secondary" size="lg" className="px-8 py-3">
+                View Research
+              </Button>
+            </Link>
+            <Link href="/contact">
+              <Button
+                variant="outline"
+                size="lg"
+                className="px-8 py-3 border-white text-black hover:bg-white hover:text-blue-600"
+              >
+                Contact Us
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
