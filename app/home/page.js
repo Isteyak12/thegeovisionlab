@@ -17,18 +17,30 @@ import {
 import { MapPin, Users, Search, Globe, Award, Zap } from "lucide-react";
 import Navbar from "@/components/navbar";
 
+// ...existing imports...
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar />
       <div className="h-20"></div>
-      {/* Hero Section */}
-      <div className="flex items-center justify-center h-[calc(100vh-80px)] bg-gradient-to-br from-blue-50 to-green-50">
-        <div className="text-center max-w-4xl mx-auto px-6">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6">
+      {/* Hero Section with Background Image */}
+      <div
+        className="flex items-center justify-center h-[calc(100vh-80px)] relative"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=800&fit=crop')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        {/* <div className="absolute inset-0 bg-black bg-opacity-50"></div> */}
+        <div className="text-center max-w-4xl mx-auto px-6 relative z-10">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Welcome to GeoVision Lab
           </h1>
-          <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+          <p className="text-xl text-white mb-8 leading-relaxed">
             Advancing geospatial technology and data visualization for a better
             understanding of our world
           </p>
@@ -36,7 +48,11 @@ export default function Home() {
             <Button size="lg" className="px-8 py-3">
               Explore Our Research
             </Button>
-            <Button variant="outline" size="lg" className="px-8 py-3">
+            <Button
+              variant="outline"
+              size="lg"
+              className="px-8 py-3 border-white text-white hover:bg-white hover:text-black"
+            >
               Meet Our Team
             </Button>
           </div>
@@ -125,8 +141,8 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="py-16 px-6 bg-gray-50">
-        <div className="max-w-4xl mx-auto">
+      <section className="py-16 px-6 bg-gray-50 relative">
+        <div className="relative max-w-4xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl font-bold text-gray-800 mb-6">
