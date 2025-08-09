@@ -39,7 +39,7 @@ export default function Home() {
             className="text-5xl md:text-6xl font-bold text-orange-400 mb-6"
             style={{ WebkitTextStroke: "3px #000000" }}
           >
-            Welcome to GeoVision Lab
+            Welcome to GeoVision Lab.
           </h1>
           <p className="text-xl text-black font-bold mb-8 leading-relaxed bg-yellow-400 px-6 py-3 rounded-lg inline-block">
             Advancing geospatial technology and data visualization for a better
