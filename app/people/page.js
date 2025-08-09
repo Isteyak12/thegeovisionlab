@@ -16,7 +16,7 @@ export default function People() {
       id: 2,
       name: "Isteyak",
       title: "Remote Sensing Analyst",
-      image: "/people/geovision_lab_photos/IMG_1690.JPG",
+      image: "/people/geovision_lab_photos/IMG_1690.jpg",
       bio: "Isteyak specializes in satellite imagery analysis and machine learning applications for geospatial data. His work focuses on .",
       email: "isteyak@uwindsor.ca",
       location: "Windsor, ON"
