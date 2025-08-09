@@ -5,58 +5,58 @@ export default function People() {
   const people = [
     {
       id: 1,
-      name: "Dr. Sarah Johnson",
-      title: "Lead GIS Specialist",
-      image: "/api/placeholder/120/120",
-      bio: "Dr. Johnson has over 15 years of experience in geographic information systems and remote sensing. She leads our research team in developing innovative mapping solutions for environmental monitoring and urban planning initiatives.",
-      email: "sarah.johnson@geovisionlab.com",
-      location: "San Francisco, CA"
+      name: "Dr. Karim Malik",
+      title: "Assistant Professor",
+      image: "/people/geovision_lab_photos/IMG_1718.JPG",
+      bio: "Dr. Malik has over 15 years of experience in geographic information systems and remote sensing. He leads our research team in developing innovative mapping solutions for environmental monitoring and urban planning initiatives.",
+      email: "karim.malik@uwindsor.ca",
+      location: "Windsor, ON"
     },
     {
       id: 2,
-      name: "Michael Chen",
+      name: "Isteyak",
       title: "Remote Sensing Analyst",
-      image: "/api/placeholder/120/120",
-      bio: "Michael specializes in satellite imagery analysis and machine learning applications for geospatial data. His work focuses on agricultural monitoring and climate change research using advanced remote sensing techniques.",
-      email: "michael.chen@geovisionlab.com",
-      location: "Austin, TX"
+      image: "/people/geovision_lab_photos/IMG_1690.JPG",
+      bio: "Isteyak specializes in satellite imagery analysis and machine learning applications for geospatial data. His work focuses on .",
+      email: "isteyak@uwindsor.ca",
+      location: "Windsor, ON"
     },
     {
       id: 3,
-      name: "Dr. Elena Rodriguez",
+      name: "Sarika Sharma",
       title: "Spatial Data Scientist",
-      image: "/api/placeholder/120/120",
-      bio: "Dr. Rodriguez combines her expertise in data science with geospatial analysis to create predictive models for urban development. She holds a PhD in Geography and has published extensively on spatial analytics.",
-      email: "elena.rodriguez@geovisionlab.com",
-      location: "Denver, CO"
+      image: "/people/geovision_lab_photos/IMG_7096.JPG",
+      bio: "Sarika combines her expertise in data science with geospatial analysis to create predictive models for urban development. She holds a BSc in Geography and has published extensively on spatial analytics.",
+      email: "sharma5c@uwindsor.ca",
+      location: "Windsor, ON"
     },
-    {
-      id: 4,
-      name: "James Wilson",
-      title: "GIS Developer",
-      image: "/api/placeholder/120/120",
-      bio: "James develops custom GIS applications and web mapping platforms. With a background in software engineering and cartography, he creates user-friendly interfaces for complex geospatial datasets.",
-      email: "james.wilson@geovisionlab.com",
-      location: "Seattle, WA"
-    },
-    {
-      id: 5,
-      name: "Dr. Priya Patel",
-      title: "Environmental Analyst",
-      image: "/api/placeholder/120/120",
-      bio: "Dr. Patel focuses on environmental impact assessment using GIS technology. Her research includes biodiversity mapping, habitat analysis, and conservation planning for protected areas and wildlife corridors.",
-      email: "priya.patel@geovisionlab.com",
-      location: "Portland, OR"
-    },
-    {
-      id: 6,
-      name: "Robert Kim",
-      title: "Cartographic Designer",
-      image: "/api/placeholder/120/120",
-      bio: "Robert creates stunning visual representations of geographic data. His expertise in cartographic design and data visualization helps clients understand complex spatial relationships through clear, compelling maps.",
-      email: "robert.kim@geovisionlab.com",
-      location: "Chicago, IL"
-    }
+    // {
+    //   id: 4,
+    //   name: "James Wilson",
+    //   title: "GIS Developer",
+    //   image: "/api/placeholder/120/120",
+    //   bio: "James develops custom GIS applications and web mapping platforms. With a background in software engineering and cartography, he creates user-friendly interfaces for complex geospatial datasets.",
+    //   email: "james.wilson@geovisionlab.com",
+    //   location: "Seattle, WA"
+    // },
+    // {
+    //   id: 5,
+    //   name: "Dr. Priya Patel",
+    //   title: "Environmental Analyst",
+    //   image: "/api/placeholder/120/120",
+    //   bio: "Dr. Patel focuses on environmental impact assessment using GIS technology. Her research includes biodiversity mapping, habitat analysis, and conservation planning for protected areas and wildlife corridors.",
+    //   email: "priya.patel@geovisionlab.com",
+    //   location: "Portland, OR"
+    // },
+    // {
+    //   id: 6,
+    //   name: "Robert Kim",
+    //   title: "Cartographic Designer",
+    //   image: "/api/placeholder/120/120",
+    //   bio: "Robert creates stunning visual representations of geographic data. His expertise in cartographic design and data visualization helps clients understand complex spatial relationships through clear, compelling maps.",
+    //   email: "robert.kim@geovisionlab.com",
+    //   location: "Chicago, IL"
+    // }
   ];
 
   return (

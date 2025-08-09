@@ -17,16 +17,16 @@ export default function Research() {
       >
         <div className="text-center text-white max-w-4xl mx-auto px-6 pt-20">
           <h1 className="text-4xl md:text-6xl font-light italic mb-8 leading-relaxed">
-            "The human race is challenged more than ever before to demonstrate our mastery, not over nature but ourselves"
+            "Impossible to map the world–we select and make graphics so that we can understand it”"
           </h1>
-          <p className="text-xl font-medium">- Rachel Carson</p>
+          <p className="text-xl font-medium">- Roger Tomlinson</p>
         </div>
         
         {/* Attribution */}
-        <div className="absolute bottom-4 right-4 text-white text-sm opacity-70">
+        {/* <div className="absolute bottom-4 right-4 text-white text-sm opacity-70">
           <p>John Krzesinski, 2009</p>
           <p className="underline">CC BY-NC-ND 2.0</p>
-        </div>
+        </div> */}
       </div>
 
       {/* Our Research Areas Section */}

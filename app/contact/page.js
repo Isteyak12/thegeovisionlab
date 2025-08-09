@@ -23,7 +23,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-800">Email</h3>
-                    <p className="text-gray-600">info@geovisionlab.com</p>
+                    <p className="text-gray-600">kmalik@uwindsor.ca</p>
                   </div>
                 </div>
                 
@@ -43,7 +43,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-800">Address</h3>
-                    <p className="text-gray-600">123 GeoVision Street<br />Tech City, TC 12345</p>
+                    <p className="text-gray-600">Windsor, ON</p>
                   </div>
                 </div>
                 
@@ -53,14 +53,14 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-800">Business Hours</h3>
-                    <p className="text-gray-600">Mon - Fri: 9:00 AM - 6:00 PM<br />Sat - Sun: Closed</p>
+                    <p className="text-gray-600">Mon - Fri: 10:00 AM - 4:00 PM<br />Sat - Sun: Closed</p>
                   </div>
                 </div>
               </div>
             </div>
             
             {/* Contact Form */}
-            <div className="bg-white rounded-lg shadow-md p-8">
+            {/* <div className="bg-white rounded-lg shadow-md p-8">
               <h2 className="text-2xl font-semibold text-gray-800 mb-6">Send us a Message</h2>
               
               <form className="space-y-4">
@@ -112,7 +112,7 @@ export default function Contact() {
                   Send Message
                 </Button>
               </form>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
