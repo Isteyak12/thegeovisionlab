@@ -1,4 +1,6 @@
-import { Mail, MapPin, Phone } from "lucide-react";
+"use client";
+
+import { Mail, MapPin, Globe, ExternalLink } from "lucide-react";
 import Navbar from "@/components/navbar";
 
 export default function People() {
@@ -10,53 +12,27 @@ export default function People() {
       image: "/people/geovision_lab_photos/IMG_1718.JPG",
       bio: "Dr. Malik has over 15 years of experience in geographic information systems and remote sensing. He leads our research team in developing innovative mapping solutions for environmental monitoring and urban planning initiatives.",
       email: "karim.malik@uwindsor.ca",
+      portfolio_page: "https://www.uwindsor.ca/science/environment/681/dr-karim-malik",
       location: "Windsor, ON"
     },
     {
       id: 2,
       name: "Isteyak",
-      title: "Remote Sensing Analyst",
+      title: "Researcher",
       image: "/people/geovision_lab_photos/IMG_1690.jpg",
-      bio: "Isteyak specializes in satellite imagery analysis and machine learning applications for geospatial data. His work focuses on .",
+      bio: "Isteyak specializes in satellite imagery analysis and machine learning applications for geospatial data. His work focuses on developing algorithms to extract patches of geospatial images and creating automated web scraping scripts to collect data from the internet.",
       email: "isteyak@uwindsor.ca",
       location: "Windsor, ON"
     },
     {
       id: 3,
       name: "Sarika Sharma",
-      title: "Spatial Data Scientist",
-      image: "/people/geovision_lab_photos/IMG_7096.JPG",
-      bio: "Sarika combines her expertise in data science with geospatial analysis to create predictive models for urban development. She holds a BSc in Geography and has published extensively on spatial analytics.",
+      title: "Research Assistant",
+      image: "/people/geovision_lab_photos/IMG_1660.JPG",
+      bio: "Sarika is completing her M.Sc. in Environmental Science under the co-supervision of Karim Malik (GeoVision Lab) and Catherine Febria (Healthy Headwaters Lab). Her research applies drone technology and machine learning techniques to map distributions of Phragmites australis, an invasive reed, in the Great Lakes Watershed. Co-created with conservation practitioners, her project aims to provide an economical, scalable, and transferable protocol that informs the management of invasive species, and protection of native habitats through restoration.",
       email: "sharma5c@uwindsor.ca",
       location: "Windsor, ON"
-    },
-    // {
-    //   id: 4,
-    //   name: "James Wilson",
-    //   title: "GIS Developer",
-    //   image: "/api/placeholder/120/120",
-    //   bio: "James develops custom GIS applications and web mapping platforms. With a background in software engineering and cartography, he creates user-friendly interfaces for complex geospatial datasets.",
-    //   email: "james.wilson@geovisionlab.com",
-    //   location: "Seattle, WA"
-    // },
-    // {
-    //   id: 5,
-    //   name: "Dr. Priya Patel",
-    //   title: "Environmental Analyst",
-    //   image: "/api/placeholder/120/120",
-    //   bio: "Dr. Patel focuses on environmental impact assessment using GIS technology. Her research includes biodiversity mapping, habitat analysis, and conservation planning for protected areas and wildlife corridors.",
-    //   email: "priya.patel@geovisionlab.com",
-    //   location: "Portland, OR"
-    // },
-    // {
-    //   id: 6,
-    //   name: "Robert Kim",
-    //   title: "Cartographic Designer",
-    //   image: "/api/placeholder/120/120",
-    //   bio: "Robert creates stunning visual representations of geographic data. His expertise in cartographic design and data visualization helps clients understand complex spatial relationships through clear, compelling maps.",
-    //   email: "robert.kim@geovisionlab.com",
-    //   location: "Chicago, IL"
-    // }
+    }
   ];
 
   return (
@@ -72,9 +48,7 @@ export default function People() {
             {people.map((person, index) => (
               <div
                 key={person.id}
-                className={`bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 ${
-                  index % 2 === 0 ? 'float-left mr-6 mb-6' : 'float-right ml-6 mb-6'
-                } w-full max-w-4xl`}
+                className="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 w-full max-w-4xl mx-auto"
               >
                 <div className="flex flex-col md:flex-row p-6">
                   {/* Profile Image */}
@@ -84,6 +58,9 @@ export default function People() {
                         src={person.image}
                         alt={person.name}
                         className="w-full h-full rounded-full object-cover border-4 border-gray-100"
+                        onError={(e) => {
+                          e.target.src = '/api/placeholder/120/120';
+                        }}
                       />
                     </div>
                   </div>
@@ -102,12 +79,28 @@ export default function People() {
                       <div className="flex flex-col sm:flex-row gap-3 text-sm text-gray-500">
                         <div className="flex items-center justify-center md:justify-start gap-1">
                           <Mail className="h-4 w-4" />
-                          <span>{person.email}</span>
+                          <a href={`mailto:${person.email}`} className="hover:text-blue-600">
+                            {person.email}
+                          </a>
                         </div>
                         <div className="flex items-center justify-center md:justify-start gap-1">
                           <MapPin className="h-4 w-4" />
                           <span>{person.location}</span>
                         </div>
+                        {person.portfolio_page && (
+                          <div className="flex items-center justify-center md:justify-start gap-1">
+                            <Globe className="h-4 w-4" />
+                            <a 
+                              href={person.portfolio_page}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="hover:text-blue-600 flex items-center gap-1"
+                            >
+                              Portfolio
+                              <ExternalLink className="h-3 w-3" />
+                            </a>
+                          </div>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -115,9 +108,6 @@ export default function People() {
               </div>
             ))}
           </div>
-          
-          {/* Clear floats */}
-          <div className="clear-both"></div>
         </div>
       </div>
     </div>

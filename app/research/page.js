@@ -17,7 +17,7 @@ export default function Research() {
       >
         <div className="text-center text-white max-w-4xl mx-auto px-6 pt-20">
           <h1 className="text-4xl md:text-6xl font-light italic mb-8 leading-relaxed">
-            "Impossible to map the world–we select and make graphics so that we can understand it”"
+            "Impossible to map the world–we select and make graphics so that we can understand it"
           </h1>
           <p className="text-xl font-medium">- Roger Tomlinson</p>
         </div>
