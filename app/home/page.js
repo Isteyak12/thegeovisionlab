@@ -154,10 +154,10 @@ export default function Home() {
                 Leading Innovation in Geospatial Technology
               </h2>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                At GeoVision Lab, we're pioneering the future of geospatial
-                analysis and visualization. Our interdisciplinary team combines
-                expertise in geography, computer science, and data analytics to
-                solve complex spatial challenges.
+                At the GeoVision Lab, we are pioneering the future of
+                Geospatial Artificial Intelligence (GeoAI). Our interdisciplinary team combines
+                expertise in geography, computer computer vision, and and deep learnin methods to
+               investigate complex environmental problems.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
@@ -186,8 +186,7 @@ export default function Home() {
               </h3>
               <p className="text-gray-600 leading-relaxed">
                 To advance the understanding and application of geospatial
-                technologies for environmental sustainability, urban planning,
-                and scientific discovery. We believe that spatial thinking is
+                technologies, computer vision and deep learning methods for change detection and environmental monitoring. We believe that spatial thinking is
                 fundamental to addressing the world's most pressing challenges.
               </p>
             </div>
