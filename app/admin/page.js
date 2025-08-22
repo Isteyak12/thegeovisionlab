@@ -1,13 +1,43 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import { Mail, Calendar, User, MessageSquare, RefreshCw } from 'lucide-react';
+import { Mail, Calendar, User, MessageSquare, RefreshCw, LogOut } from 'lucide-react';
 import { Button } from "@/components/ui/button";
+import { supabase } from "@/lib/utils";
+import { useRouter } from "next/navigation";
 
 export default function AdminMessages() {
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [user, setUser] = useState(null);
+  const router = useRouter();
+
+  // Check authentication
+  useEffect(() => {
+    const checkAuth = async () => {
+      const { data: { session } } = await supabase.auth.getSession();
+      
+      if (!session) {
+        router.replace("/login");
+        return;
+      }
+      
+      setUser(session.user);
+      fetchMessages();
+    };
+
+    checkAuth();
+
+    // Listen for auth changes
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+      if (!session) {
+        router.replace("/login");
+      }
+    });
+
+    return () => subscription.unsubscribe();
+  }, [router]);
 
   const fetchMessages = async () => {
     setLoading(true);
@@ -29,9 +59,21 @@ export default function AdminMessages() {
     }
   };
 
-  useEffect(() => {
-    fetchMessages();
-  }, []);
+  const handleSignOut = async () => {
+    await supabase.auth.signOut();
+    router.push("/login");
+  };
+
+  if (!user) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <RefreshCw className="h-8 w-8 animate-spin mx-auto mb-4" />
+          <p>Checking authentication...</p>
+        </div>
+      </div>
+    );
+  }
 
   if (loading) {
     return (
@@ -62,11 +104,18 @@ export default function AdminMessages() {
           <div>
             <h1 className="text-3xl font-bold text-gray-800">Message Queue</h1>
             <p className="text-gray-600">FIFO Order - {messages.length} total messages</p>
+            <p className="text-sm text-gray-500">Logged in as: {user.email}</p>
           </div>
-          <Button onClick={fetchMessages} className="flex items-center gap-2">
-            <RefreshCw className="h-4 w-4" />
-            Refresh
-          </Button>
+          <div className="flex gap-3">
+            <Button onClick={fetchMessages} className="flex items-center gap-2">
+              <RefreshCw className="h-4 w-4" />
+              Refresh
+            </Button>
+            <Button onClick={handleSignOut} variant="outline" className="flex items-center gap-2">
+              <LogOut className="h-4 w-4" />
+              Sign Out
+            </Button>
+          </div>
         </div>
 
         {messages.length === 0 ? (
