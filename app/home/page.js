@@ -225,7 +225,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-8 bg-gray-800 text-white">
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <p>&copy; 2024 GeoVision Lab. All rights reserved.</p>
+          <p>&copy; 2025 GeoVision Lab. All rights reserved.</p>
         </div>
       </footer>
     </div>
