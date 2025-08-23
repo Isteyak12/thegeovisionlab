@@ -1,29 +1,19 @@
 import { NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
-
-const messagesFilePath = path.join(process.cwd(), 'data', 'messages.json');
-
-function ensureDataFile() {
-  const dataDir = path.join(process.cwd(), 'data');
-  if (!fs.existsSync(dataDir)) {
-    fs.mkdirSync(dataDir, { recursive: true });
-  }
-  if (!fs.existsSync(messagesFilePath)) {
-    fs.writeFileSync(messagesFilePath, JSON.stringify([], null, 2));
-  }
-}
+import { supabase } from '@/lib/utils';
 
 export async function GET() {
   try {
-    ensureDataFile();
-    const data = fs.readFileSync(messagesFilePath, 'utf8');
-    const messages = JSON.parse(data);
-    
+    const { data: messages, error } = await supabase
+      .from('messages')
+      .select('*')
+      .order('timestamp', { ascending: false });
+
+    if (error) throw error;
+
     return NextResponse.json({
       success: true,
-      messages: messages,
-      count: messages.length
+      messages: messages || [],
+      count: messages?.length || 0
     });
   } catch (error) {
     console.error('Error reading messages:', error);
@@ -36,28 +26,26 @@ export async function GET() {
 
 export async function POST(request) {
   try {
-    ensureDataFile();
     const newMessage = await request.json();
     
-    const data = fs.readFileSync(messagesFilePath, 'utf8');
-    const messages = JSON.parse(data);
-    
-    messages.push({
-      id: newMessage.id || Date.now(),
-      name: newMessage.name,
-      email: newMessage.email,
-      subject: newMessage.subject,
-      message: newMessage.message,
-      timestamp: newMessage.timestamp || new Date().toISOString(),
-      status: 'unread'
-    });
-    
-    fs.writeFileSync(messagesFilePath, JSON.stringify(messages, null, 2));
-    
+    const { data, error } = await supabase
+      .from('messages')
+      .insert([{
+        name: newMessage.name,
+        email: newMessage.email,
+        subject: newMessage.subject,
+        message: newMessage.message,
+        timestamp: new Date().toISOString(),
+        status: 'unread'
+      }])
+      .select();
+
+    if (error) throw error;
+
     return NextResponse.json({
       success: true,
       message: 'Message saved successfully',
-      messageId: newMessage.id
+      messageId: data[0]?.id
     });
   } catch (error) {
     console.error('Error saving message:', error);
