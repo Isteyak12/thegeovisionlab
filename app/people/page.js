@@ -28,7 +28,7 @@ export default function People() {
       id: 3,
       name: "Sarika Sharma",
       title: "Research Assistant",
-      image: "/people/geovision_lab_photos/IMG_1660.JPG",
+      image: "/people/geovision_lab_photos/IMG_1660.jpg",
       bio: "Sarika is completing her M.Sc. in Environmental Science under the co-supervision of Karim Malik (GeoVision Lab) and Catherine Febria (Healthy Headwaters Lab). Her research applies drone technology and machine learning techniques to map distributions of Phragmites australis, an invasive reed, in the Great Lakes Watershed. Co-created with conservation practitioners, her project aims to provide an economical, scalable, and transferable protocol that informs the management of invasive species, and protection of native habitats through restoration.",
       email: "sharma5c@uwindsor.ca",
       location: "Windsor, ON"
