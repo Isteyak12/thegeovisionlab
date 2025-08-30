@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import Navbar from "@/components/navbar";
+import Navbar from "@/components/navbar"; // Fixed: removed extra quote
 
 export default function Research() {
   return (
@@ -45,7 +45,7 @@ export default function Research() {
 
           {/* Research Area Cards */}
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="bg-gray-800 border-gray-700 overflow-hidden">
+            {/* <Card className="bg-gray-800 border-gray-700 overflow-hidden">
               <div className="h-48 bg-cover bg-center" style={{backgroundImage: "url('/api/placeholder/400/300')"}}></div>
               <CardHeader className="text-white">
                 <CardTitle className="text-lg">Land Conservation Systems</CardTitle>
@@ -79,7 +79,7 @@ export default function Research() {
                   [Placeholder content - Add your research on ecosystem services, environmental modeling, and sustainability analysis]
                 </CardDescription>
               </CardContent>
-            </Card>
+            </Card> */}
           </div>
         </div>
       </section>
@@ -93,15 +93,15 @@ export default function Research() {
             {/* Publication 1 */}
             <div className="grid lg:grid-cols-2 gap-8 items-start">
               <div className="bg-gray-50 p-6 rounded-lg border-l-4 border-blue-500">
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">[Publication Title Placeholder]</h3>
-                <p className="text-gray-600 mb-2">[Authors] - [Year]</p>
-                <p className="text-gray-700">[Abstract or description placeholder - add your publication details here]</p>
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">Structural Similarity-Guided Siamese U-Net Model for Detecting Changes in Snow Water Equivalent</h3>
+                <p className="text-gray-600 mb-2">Karim Malik, Colin Robertson - 2025</p>
+                <p className="text-gray-700">Our study has demonstrated the utility of combining computer vision metrics and deep learning methods to detect spatial–temporal variability in SWE. The SSIM-guided Si-UNet model detected instances of “No Change” (i.e., high SWEsim values) and instances of “Change” (i.e., low SWEsim values) with a 99% F1 score at a 50% confidence threshold, an increase of 16% compared to the Si-UNet with BCE loss and ECD metric.</p>
               </div>
               
               {/* A4 Page Image Placeholder */}
               <div className="bg-white shadow-lg rounded-lg overflow-hidden" style={{aspectRatio: '210/297'}}>
                 <img 
-                  src="/api/placeholder/400/566" 
+                  src="/people/geovision_lab_photos/unet.jpg" 
                   alt="Research Paper Preview" 
                   className="w-full h-full object-cover"
                 />
@@ -109,9 +109,10 @@ export default function Research() {
             </div>
             
             {/* Publication 2 */}
+            {/* 
             <div className="grid lg:grid-cols-2 gap-8 items-start">
-              {/* A4 Page Image Placeholder */}
-              <div className="bg-white shadow-lg rounded-lg overflow-hidden" style={{aspectRatio: '210/297'}}>
+              {/* A4 Page Image Placeholder */
+              /* <div className="bg-white shadow-lg rounded-lg overflow-hidden" style={{aspectRatio: '210/297'}}>
                 <img 
                   src="/api/placeholder/400/566" 
                   alt="Research Paper Preview" 
@@ -124,9 +125,11 @@ export default function Research() {
                 <p className="text-gray-600 mb-2">[Authors] - [Year]</p>
                 <p className="text-gray-700">[Abstract or description placeholder - add your publication details here]</p>
               </div>
-            </div>
+            </div> 
+            */}
 
             {/* Publication 3 */}
+            {/* 
             <div className="grid lg:grid-cols-2 gap-8 items-start">
               <div className="bg-gray-50 p-6 rounded-lg border-l-4 border-purple-500">
                 <h3 className="text-lg font-semibold text-gray-800 mb-2">[Publication Title Placeholder]</h3>
@@ -135,7 +138,7 @@ export default function Research() {
               </div>
               
               {/* A4 Page Image Placeholder */}
-              <div className="bg-white shadow-lg rounded-lg overflow-hidden" style={{aspectRatio: '210/297'}}>
+              {/* <div className="bg-white shadow-lg rounded-lg overflow-hidden" style={{aspectRatio: '210/297'}}>
                 <img 
                   src="/api/placeholder/400/566" 
                   alt="Research Paper Preview" 
@@ -143,14 +146,12 @@ export default function Research() {
                 />
               </div>
             </div>
-
+            */}
           </div>
         </div>
       </section>
 
       {/* Placeholder Section 2 - Research Methods */}
-
-
       {/* Placeholder Section 3 - Current Projects */}
 
     </div>
