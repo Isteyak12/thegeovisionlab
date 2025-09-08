@@ -157,7 +157,7 @@ export default function Home() {
                 At the GeoVision Lab, we are pioneering the future of
                 Geospatial Artificial Intelligence (GeoAI). Our interdisciplinary team combines
                 expertise in geography, computer computer vision, and and deep learnin methods to
-               investigate complex environmental problems.
+               investigate complex environmental problems, and develop solutions.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
