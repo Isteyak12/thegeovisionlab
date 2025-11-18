@@ -25,7 +25,7 @@ export default function About() {
               <div className="bg-gray-50 p-6 rounded-lg">
                 <h3 className="text-lg font-semibold text-gray-800 mb-2">GIS Solutions</h3>
                 <p className="text-gray-600">
-                  Custom Geographic Information System solutions for mapping, analysis, and data management.
+                  GeoAI, analysis, and data management.
                 </p>
               </div>
               <div className="bg-gray-50 p-6 rounded-lg">
