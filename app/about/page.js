@@ -10,34 +10,34 @@ export default function About() {
       
       <div className="container mx-auto px-6 py-8">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold text-gray-800 mb-6">About GeoVision Lab</h1>
+          <h1 className="text-4xl font-bold text-gray-800 mb-6">About the GeoVision Lab</h1>
           
           <div className="bg-white rounded-lg shadow-md p-8 mb-8">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">Our Mission</h2>
             <p className="text-gray-600 leading-relaxed mb-6">
-              GeoVision Lab is dedicated to advancing geospatial technology and data visualization. 
-              We provide cutting-edge solutions for geographic information systems, remote sensing, 
-              and spatial analysis to help organizations make informed decisions based on location data.
+              GeoVision Lab is dedicated to advancing geospatial artificial intelligence (GeoAI). 
+              We provide cutting-edge solutions for geographic information systems, deep learning, remote sensing, 
+              and spatial analysis to help organizations make informed decisions.
             </p>
             
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">What We Do</h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">GIS Solutions</h3>
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">GIS and GeoAI Solutions</h3>
                 <p className="text-gray-600">
-                  GeoAI, analysis, and data management.
+                  GeoAI for land cover change analysis, deep learning, and computer vision for cryosphere monitoring.
                 </p>
               </div>
               <div className="bg-gray-50 p-6 rounded-lg">
                 <h3 className="text-lg font-semibold text-gray-800 mb-2">Remote Sensing</h3>
                 <p className="text-gray-600">
-                  Satellite and aerial imagery analysis for environmental monitoring and urban planning.
+                  Satellite, aerial, and UAV imagery for analysis for environmental monitoring and planning.
                 </p>
               </div>
               <div className="bg-gray-50 p-6 rounded-lg">
                 <h3 className="text-lg font-semibold text-gray-800 mb-2">Data Visualization</h3>
                 <p className="text-gray-600">
-                  Interactive maps and dashboards to visualize complex geospatial datasets.
+                  Interactive maps and dashboards to visualize complex environmental changes.
                 </p>
               </div>
               <div className="bg-gray-50 p-6 rounded-lg">
