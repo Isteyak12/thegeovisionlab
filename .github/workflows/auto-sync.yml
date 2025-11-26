@@ -2,10 +2,9 @@ name: Auto-Sync Fork with Upstream
 
 on:
   schedule:
-    # GitHub Actions cron uses UTC
-    # This runs every 5 minutes (max frequency allowed)
+    # Runs every 5 minutes (GitHub's minimum interval)
     - cron: '*/5 * * * *'
-  workflow_dispatch:  # Allows manual trigger
+  workflow_dispatch:  # Allows manual trigger in GitHub UI
 
 jobs:
   sync:
@@ -15,30 +14,31 @@ jobs:
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GH_PAT }}
-          fetch-depth: 0  # Get full history
+          fetch-depth: 0
+          ref: main  # 👈 CHANGE THIS if your branch is 'master' or something else
 
       - name: Add upstream remote
         run: |
           git remote add upstream https://github.com/malikkariim/thegeovisionlab.git
           git fetch upstream
 
-      - name: Check if upstream/main differs from origin/main
+      - name: Check if upstream differs
         id: check
         run: |
-          LOCAL=$(git rev-parse origin/main)
-          UPSTREAM=$(git rev-parse upstream/main)
+          LOCAL=$(git rev-parse origin/main)      # 👈 CHANGE 'main' if needed
+          UPSTREAM=$(git rev-parse upstream/main) # 👈 CHANGE 'main' if needed
           if [ "$LOCAL" = "$UPSTREAM" ]; then
             echo "no_update=true" >> $GITHUB_OUTPUT
-            echo "Fork is up to date."
+            echo "✅ Fork is up to date."
           else
             echo "no_update=false" >> $GITHUB_OUTPUT
-            echo "Upstream has new commits."
+            echo "🔄 Upstream has new commits."
           fi
 
-      - name: Sync fork with upstream
+      - name: Merge and push if needed
         if: steps.check.outputs.no_update == 'false'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git merge --ff-only upstream/main
-          git push origin main
+          git merge --ff-only upstream/main        # 👈 CHANGE 'main' if needed
+          git push origin main                     # 👈 CHANGE 'main' if needed
