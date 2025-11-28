@@ -2,49 +2,45 @@ name: Auto-Sync Fork with Upstream
 
 on:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: '*/5 * * * *'  # every 5 minutes
   workflow_dispatch:
-
-permissions:
-  contents: write
 
 jobs:
   sync:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout your fork
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GH_PAT }}
+          token: ${{ secrets.GH_PAT }}  # only needed for pushing to your fork
           fetch-depth: 0
           ref: main
 
-      - name: Add upstream remote
+      - name: Add upstream remote (public repo)
         run: |
           git remote add upstream https://github.com/malikkariim/thegeovisionlab.git
+
+      - name: Fetch upstream
+        run: |
           git fetch upstream
 
-      - name: Check if upstream has new commits
+      - name: Check if upstream/main differs from origin/main
         id: check
         run: |
-          LOCAL=$(git rev-parse HEAD)
+          LOCAL=$(git rev-parse origin/main)
           UPSTREAM=$(git rev-parse upstream/main)
-
           if [ "$LOCAL" = "$UPSTREAM" ]; then
             echo "no_update=true" >> $GITHUB_OUTPUT
-            echo "Up to date."
+            echo "✅ Fork is up to date."
           else
             echo "no_update=false" >> $GITHUB_OUTPUT
-            echo "New commits found."
+            echo "🔄 Upstream has new commits."
           fi
 
-      - name: Merge and push
+      - name: Merge and push if needed
         if: steps.check.outputs.no_update == 'false'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          git merge upstream/main --ff-only
+          git merge --ff-only upstream/main
           git push origin main
-
