@@ -17,7 +17,7 @@ export default function About() {
             <p className="text-gray-600 leading-relaxed mb-6">
               GeoVision Lab is dedicated to advancing geospatial artificial intelligence (GeoAI). 
               We provide cutting-edge solutions for geographic information systems, deep learning, remote sensing, 
-              and spatial analysis to help organizations make informed decisions.
+              and spatial analysis to help make informed decisions.
             </p>
             
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">What We Do</h2>
@@ -31,7 +31,7 @@ export default function About() {
               <div className="bg-gray-50 p-6 rounded-lg">
                 <h3 className="text-lg font-semibold text-gray-800 mb-2">Remote Sensing</h3>
                 <p className="text-gray-600">
-                  Satellite, aerial, and UAV imagery for analysis for environmental monitoring and planning.
+                  Satellite, aerial, and UAV imagery for environmental monitoring and planning.
                 </p>
               </div>
               <div className="bg-gray-50 p-6 rounded-lg">
@@ -53,8 +53,7 @@ export default function About() {
           <div className="bg-white rounded-lg shadow-md p-8 mb-8">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">Our Approach</h2>
             <p className="text-gray-600 leading-relaxed mb-4">
-              We combine GeoAI with computer vision. Our interdisciplinary team brings together specialists 
-              in geography, computer science, data analytics, and environmental science.
+              We combine tools from deep- and machine learning, computer vision, GIScience, and remote sensing to advance the frontiers in environmental monitoring.
             </p>
             <p className="text-gray-600 leading-relaxed">
               Every project begins with understanding your unique challenges and objectives. We then 
