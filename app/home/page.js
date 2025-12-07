@@ -42,8 +42,7 @@ export default function Home() {
             Welcome to GeoVision Lab.
           </h1>
           <p className="text-xl text-black font-bold mb-8 leading-relaxed bg-yellow-400 px-6 py-3 rounded-lg inline-block">
-            Advancing geospatial technology and data visualization for a better
-            understanding of our world!
+            Advancing geospatial computer vision and deep learning for detecting, characterizing, and tracking changes in ecosystem processes and functions across space and time.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/research">
@@ -111,7 +110,7 @@ export default function Home() {
               <CardContent>
                 <CardDescription className="text-gray-600">
                   Cutting-edge spatial analytics and machine learning for
-                  geospatial insights
+                  terrestrial ecosystem change detection
                 </CardDescription>
               </CardContent>
             </Card>
@@ -156,8 +155,8 @@ export default function Home() {
               <p className="text-gray-600 mb-6 leading-relaxed">
                 At the GeoVision Lab, we are pioneering the future of
                 Geospatial Artificial Intelligence (GeoAI). Our interdisciplinary team combines
-                expertise in geography, computer computer vision, and and deep learnin methods to
-               investigate complex environmental problems, and develop solutions.
+                expertise in geography, computer vision, and deep learning methods to
+               investigate complex environmental problems, and develop effective solutions.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
@@ -186,7 +185,7 @@ export default function Home() {
               </h3>
               <p className="text-gray-600 leading-relaxed">
                 To advance the understanding and application of geospatial
-                technologies, computer vision and deep learning methods for change detection and environmental monitoring. We believe that spatial thinking is
+                technologies, computer vision, and deep learning methods for change detection and environmental monitoring. We believe that Geospatial Artifical Intelligence
                 fundamental to addressing the world's most pressing challenges.
               </p>
             </div>
