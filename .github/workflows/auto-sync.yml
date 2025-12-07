@@ -42,7 +42,11 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git checkout main
-          git rebase upstream/main
+          if ! git rebase upstream/main; then
+            echo "❌ Rebase failed - conflicts detected. Manual intervention required."
+            git rebase --abort
+            exit 1
+          fi
           # Use GITHUB_TOKEN for push (built-in, no setup needed)
           git remote set-url origin https://x-access-token:${{ github.token }}@github.com/Isteyak12/thegeovisionlab.git
           git push origin main --force-with-lease
