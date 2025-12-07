@@ -41,7 +41,10 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git merge --ff-only upstream/main
+          # Rebase local main onto upstream/main to preserve linear history
+          git fetch upstream
+          git checkout main
+          git rebase upstream/main
           # Use GITHUB_TOKEN for push (built-in, no setup needed)
           git remote set-url origin https://x-access-token:${{ github.token }}@github.com/Isteyak12/thegeovisionlab.git
-          git push origin main
+          git push origin main --force-with-lease
