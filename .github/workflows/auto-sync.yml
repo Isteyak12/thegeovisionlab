@@ -43,7 +43,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git checkout main
           if ! git rebase upstream/main; then
-            echo "❌ Rebase failed - conflicts detected. Manual intervention required."
+            echo "❌ Rebase failed. This may be due to conflicts or other issues. Manual intervention required."
             git rebase --abort
             exit 1
           fi
