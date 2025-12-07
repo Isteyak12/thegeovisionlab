@@ -53,8 +53,7 @@ export default function About() {
           <div className="bg-white rounded-lg shadow-md p-8 mb-8">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">Our Approach</h2>
             <p className="text-gray-600 leading-relaxed mb-4">
-              We combine cutting-edge technology with deep domain expertise to deliver solutions that 
-              are both innovative and practical. Our interdisciplinary team brings together specialists 
+              We combine GeoAI with computer vision. Our interdisciplinary team brings together specialists 
               in geography, computer science, data analytics, and environmental science.
             </p>
             <p className="text-gray-600 leading-relaxed">
