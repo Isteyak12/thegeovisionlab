@@ -42,8 +42,9 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git checkout main
-          # Reset fork to match upstream exactly (discards any fork-specific commits)
+          # Reset fork to match upstream exactly (WARNING: This will permanently delete any commits unique to the fork)
           git reset --hard upstream/main
           # Use GITHUB_TOKEN for push (built-in, no setup needed)
           git remote set-url origin https://x-access-token:${{ github.token }}@github.com/Isteyak12/thegeovisionlab.git
-          git push origin main --force-with-lease
+          # Use --force since we're intentionally overwriting history to match upstream
+          git push origin main --force
